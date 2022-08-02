@@ -28,11 +28,17 @@ jobs:
           name: publish
           path: ./publish/
         
-      - uses: ncipollo/release-action@v1
+
+          
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          artifacts: "release.tar.gz,foo/*.txt"
-          bodyFile: "body.md"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            LICENSE.txt
+            *.jar
         
       
     
