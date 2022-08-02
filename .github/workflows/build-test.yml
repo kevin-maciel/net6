@@ -28,5 +28,11 @@ jobs:
           name: publish
           path: ./publish/
         
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.tar.gz,foo/*.txt"
+          bodyFile: "body.md"
+          token: ${{ secrets.ContraseñaNetPilar }}
+        
       
     
