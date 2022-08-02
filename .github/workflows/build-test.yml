@@ -22,6 +22,8 @@ jobs:
         run: dotnet build --configuration ${{ env.BUILD_CONFIGURATION }}
       - name: Publish
         run: dotnet publish
+      - name: Upload Publish
+        uses: actions/upload-artifact@v3
         
       
     
