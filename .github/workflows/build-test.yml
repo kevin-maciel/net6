@@ -22,11 +22,11 @@ jobs:
         run: dotnet build --configuration ${{ env.BUILD_CONFIGURATION }}
       - name: Publish
         run: dotnet publish -o ./publish/
-        
-      - name: comprimir publish
-        run: zip publish.zip ./publish
       - name: mostrar directorio
         run: ls
+      - name: comprimir publish
+        run: zip publish.zip ./publish
+      
         
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
