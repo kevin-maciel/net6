@@ -11,21 +11,18 @@ jobs:
       - name: checkear el repositorio
         uses: actions/checkout@v3
       
-      - name: Setup .NET Core SDK ( ${{ env.DOTNET_CORE_VERSION }} )
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
-      - name: Restore Packages
-        run: dotnet restore 
-        
-      - name: Build - .NET Core ${{ env.DOTNET_CORE_VERSION }}
-        run: dotnet build --configuration ${{ env.BUILD_CONFIGURATION }}
-      - name: Publish
-        run: dotnet publish -o ./publish/
+      - name: crear carpeta publish
+        run: mkdir publish
+      - name: crear archivo en publish
+        run: cd publish && touch main.py
+     
       - name: mostrar directorio
         run: ls
       - name: comprimir publish
         run: zip publish.zip ./publish
+        
+      - name: mostrar directorio
+        run: ls
       
         
       - uses: "marvinpinto/action-automatic-releases@latest"
