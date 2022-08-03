@@ -26,19 +26,17 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: publish
-          path: ./publish/
-        
-
+          path: ./publish/  
           
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Create release
+        uses: ncipollo/release-action@master
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: |
-            LICENSE.txt
-            *.jar
+          artifacts: 'publish.zip'
+          tag: "latest"
+          name: "Version latest"
+          body: "<insert release notes here>"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: true
         
       
     
