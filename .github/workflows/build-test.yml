@@ -29,7 +29,8 @@ jobs:
           path: ./publish/
       - name: Download a single artifact
         uses: actions/download-artifact@v3
-        
+        with:
+          artifacts: 'publish.zip'
       - name: Create release
         uses: ncipollo/release-action@v1.10.0
         with:
