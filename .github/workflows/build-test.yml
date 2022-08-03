@@ -29,6 +29,16 @@ jobs:
           path: ./publish/
       - name: Download a single artifact
         uses: actions/download-artifact@v3
+        
+      - name: Create release
+        uses: ncipollo/release-action@v1.10.0
+        with:
+          artifacts: 'publish.zip'
+          tag: "latest"
+          name: "Version latest"
+          body: "<insert release notes here>"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: true
       - name: mostrar directorio
         run: ls
       - name: ir a carpeta publish
