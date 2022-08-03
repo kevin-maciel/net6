@@ -31,7 +31,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: 'publish'
-          path: .
       - name: Create release
         uses: ncipollo/release-action@v1.10.0
         with:
