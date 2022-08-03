@@ -27,6 +27,12 @@ jobs:
         with:
           name: publish
           path: ./publish/
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+         name: release
+      - name: mostrar directorio
+        run: ls
       - name: ir a carpeta publish
         run: cd publish && ls
 
