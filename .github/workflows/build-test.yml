@@ -11,15 +11,11 @@ jobs:
       - name: checkear el repositorio
         uses: actions/checkout@v3
       
-      - name: crear carpeta publish
-        run: mkdir publish
       - name: crear main.py
         run:  touch main.py
      
       - name: mostrar directorio
-        run: ls
-      - name: instalar zip
-        run: sudo apt install zip      
+        run: ls   
       - name: comprimir publish
         run: zip publish.zip main.py
         
