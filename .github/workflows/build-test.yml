@@ -19,7 +19,7 @@ jobs:
       - name: mostrar directorio
         run: ls
       - name: comprimir publish
-        run: zip publish.zip ./publish
+        run: zip publish.zip publish
         
       - name: mostrar directorio
         run: ls
