@@ -31,7 +31,7 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1.10.0
         with:
-          artifacts: './publish/'
+          artifacts: './publish/publish.zip'
           tag: "latest"
           name: "Version latest"
           body: "<insert release notes here>"
