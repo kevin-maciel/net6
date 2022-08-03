@@ -34,7 +34,7 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: true
           title: "Development Build"
-          files: ./publish/publish.zip
+          files: ./publish.zip
         
 
      
