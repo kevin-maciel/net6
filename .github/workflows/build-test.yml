@@ -26,7 +26,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: publish
-          path: ./publish/  
+          path: ./publish/
+      - name: ir a carpeta publish
+        run: cd publish
       - name: Ver directorio actual
         run: ls
           
