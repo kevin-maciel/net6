@@ -13,15 +13,15 @@ jobs:
       
       - name: crear carpeta publish
         run: mkdir publish
-      - name: crear archivo en publish
-        run: cd publish && touch main.py
+      - name: crear main.py
+        run:  touch main.py
      
       - name: mostrar directorio
         run: ls
       - name: instalar zip
         run: sudo apt install zip      
       - name: comprimir publish
-        run: zip publish.zip publish
+        run: zip publish.zip main.py
         
       - name: mostrar directorio
         run: ls
