@@ -18,6 +18,8 @@ jobs:
      
       - name: mostrar directorio
         run: ls
+      - name: instalar zip
+        run: sudo apt install zip      
       - name: comprimir publish
         run: zip publish.zip publish
         
