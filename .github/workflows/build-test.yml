@@ -30,7 +30,8 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
-          artifacts: 'publish.zip'
+          name: 'publish.zip'
+          path: .
       - name: Create release
         uses: ncipollo/release-action@v1.10.0
         with:
