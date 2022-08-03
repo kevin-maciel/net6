@@ -22,32 +22,11 @@ jobs:
         run: dotnet build --configuration ${{ env.BUILD_CONFIGURATION }}
       - name: Publish
         run: dotnet publish -o ./publish/
-      - name: Upload Publish
-        uses: actions/upload-artifact@v3
-        with:
-          name: publish
-          path: ./publish/
-      
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: 'publish'
-      - name: Create release
-        uses: ncipollo/release-action@v1.10.0
-        with:
-          artifacts: 'publish'
-          tag: "latest"
-          name: "Version latest"
-          body: "<insert release notes here>"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          draft: true
-      
+        
       - name: comprimir publish
         run: zip publish.zip ./publish
       - name: mostrar directorio
         run: ls
-      - name: ir a carpeta publish
-        run: cd publish && ls
         
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
